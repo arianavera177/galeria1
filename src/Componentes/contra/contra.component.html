@@ -1,0 +1,47 @@
+<!-- <input type="password" class="input" placeholder="Contrseña">
+       --> 
+
+      <!-- Un ejemplo bidireccional -->
+        <!-- <div class="input-container">
+          <p>Constraseña:{{contra.value}}</p>
+          <input type="password" class="input" placeholder="Contraseña" #contra  (keyup)="0" [disabled]="c" >
+        <span></span>
+        </div> -->
+        <!-- Normal -->
+        <!-- <div class="input-container">
+          <input type="password" class="input" placeholder="Contraseña"  >
+        </div> -->
+
+
+        <div class="input-container">
+          <!-- Se realiza una vinculación bidireccional con ngModel -->
+          <!-- Se implementa un método que ayuda a verificar la contraseña-->
+          <input type="password"  placeholder="Contraseña" [(ngModel)]="contrasena"  (input)="verificarContrasena()"  >
+         
+          <!-- Mensaje de validación -->
+          <span *ngIf="contrasena && !contrasenaValida" class="error-message">Contraseña incorrecta</span>
+          <span *ngIf="contrasena && contrasenaValida" class="success-message">Contraseña correcta</span>
+        </div>
+        <!-- Se usa ngIf como una condición si la contraseña es correcta, luego se valida y son iguales muestra un mensaje "Correcto", sino es falso -->
+
+
+
+
+
+
+
+
+
+
+        <!-- <div class="input-container">
+          <input type="password" [(ngModel)]="contrasena" placeholder="Contraseña" (input)="onContrasenaChange()">
+          <span *ngIf="!contrasenaValida" class="error-message">La contraseña debe tener al menos 4 caracteres</span>
+        </div> -->
+
+
+
+        
+        <!-- <div class="input-container">
+          <input type="password" [(ngModel)]="contrasena" placeholder="Contraseña" (input)="onContrasenaChange()">
+          <span *ngIf="!contrasenaValida" class="error-message">La contraseña debe tener al menos 4 caracteres</span>
+        </div>       -->

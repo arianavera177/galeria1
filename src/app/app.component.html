@@ -1,0 +1,69 @@
+<!-- 
+
+<div class="container" [ngClass]="{ 'dark-mode': isDarkMode }">
+  <h1>SUMATIVA</h1>
+  <h1>{{ isDarkMode ? 'Modo Oscuro Activado' : 'Modo Claro Activado' }}</h1>
+  <div class="boton" >
+    <app-btn-aceptar (boton1)="aceptarClick()"></app-btn-aceptar>
+    <app-btn-cancelar (boton2)="parar()"></app-btn-cancelar>
+ 
+    <app-btn-primario></app-btn-primario>
+   <app-btn-secundario></app-btn-secundario>
+
+   <app-btn-modo (modoclick)="toggleDarkMode($event)" ></app-btn-modo>
+
+  </div>
+ 
+  <div class="datos">
+  <app-correo ></app-correo>
+  
+  <br>
+  <app-contra></app-contra>
+  <app-texto></app-texto>
+  <app-visualizador></app-visualizador>
+  </div>
+  
+</div> -->
+<div class="container" [ngClass]="{ 'dark-mode': isDarkMode }">
+  <h1>SUMATIVA</h1>
+  <h1>{{ isDarkMode ? 'Modo Oscuro Activado' : 'Modo Claro Activado' }}</h1>
+
+  <div class="boton">
+    <app-btn-aceptar (buttonClicked)="onButtonClicked()" ></app-btn-aceptar>
+    <app-btn-cancelar  ></app-btn-cancelar>
+    <app-btn-primario ></app-btn-primario>
+    <app-btn-secundario></app-btn-secundario>
+    <app-btn-modo (modoclick)="toggleDarkMode($event)"></app-btn-modo>
+  </div>
+
+  <!-- Contenedor de datos -->
+  <div class="datos">
+    <!-- Contenedor para los componentes de la izquierda (correo, contra, texto, cuadrado) -->
+    <div class="datos-izquierda">
+      <!-- <app-correo (usuario)="recibirUsuario($event)"></app-correo>
+      <app-contra (contrasena)="recibirContrasena($event)"></app-contra> -->
+      <app-correo  (correoEmitido)="correo = $event"></app-correo>
+      <app-contra (contrasenaEmitida)="contrasena = $event"></app-contra>
+      
+    <app-texto (textoEmitido)="texto = $event"></app-texto>
+    </div>
+
+    <!-- Componente Visualizador a la derecha -->
+    <div class="datos-derecha">
+      <app-visualizador [correo]="correo" [texto]="texto" [contrasena]="contrasena" [animateButton]="animateVisualizador"   ></app-visualizador>
+    </div>
+  </div>
+</div>
+
+
+
+
+<!-- <div class="container">
+  <h1>SUMATIVA</h1>
+
+  <app-correo (correoEmitido)="recibirCorreo($event)"></app-correo>
+  <app-contra (contrasenaEmitida)="recibirContrasena($event)"></app-contra>
+  <app-texto (textoEmitido)="recibirTexto($event)"></app-texto>
+
+  <app-visualizador [correo]="usuario" [contrasena]="contrasena" [texto]="texto"></app-visualizador>
+</div> -->

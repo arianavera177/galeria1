@@ -1,0 +1,27 @@
+
+
+
+<!-- <div class="input-container">
+    <h3>Texto:</h3>
+    <input type="text">
+  </div> -->
+
+  <div class="input-container">
+    <input 
+      type="text"  placeholder="Texto"  [(ngModel)]="texto"   (input)="verificarTexto()"  
+    >
+  
+    <!-- Mensaje de validación -->
+    <span *ngIf="texto && !textoValido" class="error-message">El texto no puede estar vacío</span>
+    <span *ngIf="texto && textoValido" class="success-message">Texto válido</span>
+  </div>
+
+
+
+
+
+
+
+  <!-- <div class="input-container">
+    <input type="text" [(ngModel)]="texto" placeholder="Texto" (input)="onTextoChange()">
+  </div> -->

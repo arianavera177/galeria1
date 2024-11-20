@@ -1,0 +1,396 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* Estilos para el contenedor
+.container {
+    background: linear-gradient(45deg, red, orange, yellow, green, blue, indigo, violet);
+    background-size: 400% 400%;
+    animation: rainbow 5s ease infinite;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  Animación del arcoíris
+  @keyframes rainbow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  /* Estilos para el título */
+  /* h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+  } */
+  
+  /* Estilos para el grupo de botones
+  .button-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+  }
+  
+  button:hover {
+    transform: scale(1.1);
+  }
+  
+  /* Colores de botones */
+  /* app-btn-aceptar {
+    background-color: #4CAF50;
+    color: white;
+  }
+  
+  app-btn-cancelar {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  app-btn-primario {
+    background-color: #2196F3;
+    color: white;
+  }
+  
+  app-btn-secundario {
+    background-color: #FFEB3B;
+    color: black;
+  } */
+  
+  /* app-btn-modo {
+    background-color: #9C27B0;
+    color: white;
+  } */ 
+  
+  /* Estilos para los componentes */
+  /* .component-group {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  } */
+  
+  /* app-correo, app-contra, app-texto, app-visualizador, app-cuadrado {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  } */
+  /* .parent-container {
+    padding: 20px;
+    border: 2px solid #333;
+    text-align: center;
+    transition: transform 0.5s ease;
+  }
+  
+  .parent-container.animate {
+    transform: scale(1.1); /* Aplica la animación de escala al componente padre */
+  /* Modo Claro (por defecto) */
+
+
+/* estilop*/
+
+/* Modo Claro por defecto */
+/* .container {
+  background-color: #f9f9f9;  
+  color: #333;  
+  transition: background-color 0.3s ease, color 0.3s ease;
+} */
+/* h1{
+  text-align: center;
+} */
+/* Modo Oscuro */
+/* .dark-mode {
+  background-color: #121212;  
+  color: #fff; 
+} */
+
+/* .boton.dark-mode {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 20px;
+
+} */
+
+/* app-btn-aceptar {
+  background-color: #4CAF50;
+  color: white;
+} */
+/* Contenedor de datos (componentes) */
+/* .datos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;}   */
+
+/* CSS último*/
+/* Contenedor principal con modo oscuro */
+/* .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  transition: all 0.3s ease;
+  border-radius: 2em;
+  background-color: #aaa;
+} */
+
+/* .dark-mode {
+  background-color: #2f2f2f;
+  color: #f7f7f7;
+}
+
+h1 {
+  text-align: center;
+} */
+
+/* Contenedor de los botones */
+/* .boton {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+} */
+
+/* Contenedor principal con fondo galáctico */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 20px;
+  transition: all 0.3s ease;
+  border-radius: 2em;
+  background: linear-gradient(135deg, #0d0d1b, #191a27); /* Fondo oscuro con tonos galácticos */
+  color: #f7f7f7;
+  font-family: 'Star Jedi', sans-serif; /* Tipografía inspirada en Star Wars */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0px 0px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* Fondo de estrellas animado */
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://www.transparenttextures.com/patterns/stardust.png'); /* Estrellas */
+  opacity: 0.3;
+  animation: starrySky 50s linear infinite;
+}
+
+/* Animación de fondo de estrellas */
+@keyframes starrySky {
+  0% { background-position: 0 0; }
+  100% { background-position: 500px 500px; }
+}
+
+/* Modo oscuro - ya no es necesario el evento, ya se aplica por defecto */
+.dark-mode {
+  background: linear-gradient(135deg, #222, #333);  /* Fondo más oscuro */
+  color: #f7f7f7;
+}
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #ffcc00; /* Amarillo, color icónico de Star Wars */
+  text-shadow: 0px 0px 20px rgba(255, 255, 0, 0.8), 0px 0px 40px rgba(0, 0, 0, 0.7);
+  margin-bottom: 20px;
+  font-family: 'Star Jedi', sans-serif;
+}
+
+/* Contenedor de los botones */
+.boton {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+/* Estilo para los botones dentro de .datos */
+.datos button {
+  margin: 0 10px;
+  background: linear-gradient(135deg, #444, #666);  /* Fondo metálico con sombras */
+  color: #f7f7f7;
+  padding: 12px 24px;
+  border-radius: 10px;
+  font-size: 1.2rem;
+  border: none;
+  transition: transform 0.2s ease-in-out;
+  box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+}
+
+.datos button:hover {
+  transform: scale(1.1);
+  background: linear-gradient(135deg, #666, #888);
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+
+/* Contenedor de datos (componentes) */
+.datos {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+/* Estilo de los campos de entrada */
+input {
+  padding: 12px;
+  margin: 10px 0;
+  border: 1px solid #555;
+  border-radius: 8px;
+  background-color: #222;
+  color: #f7f7f7;
+  font-size: 1rem;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+input:focus {
+  outline: none;
+  border-color: #ffcc00;  /* Resalta los campos con color amarillo */
+  box-shadow: 0 0 15px rgba(255, 255, 0, 0.9);
+}
+
+/* Contenedor para los componentes a la izquierda */
+.datos-izquierda {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  border-radius: 15px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Contenedor para los componentes a la derecha (Visualizador) */
+.datos-derecha {
+  width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semitransparente */
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Estilo para los botones */
+.app-btn-aceptar,
+.app-btn-cancelar,
+.app-btn-primario,
+.app-btn-secundario {
+  background: linear-gradient(145deg, #444, #666);  /* Fondo metálico */
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.3);
+}
+
+.app-btn-aceptar:hover,
+.app-btn-cancelar:hover,
+.app-btn-primario:hover,
+.app-btn-secundario:hover {
+  transform: scale(1.1);
+  background: linear-gradient(145deg, #666, #888);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+}
+
+/* Estilo para los mensajes de error */
+.error-message {
+  color: red;
+  font-size: 12px;
+  margin-top: 5px;
+  font-family: 'Arial', sans-serif;
+}
+
+/* Fondo galáctico adicional para el área de visualizador */
+.datos-izquierda app-correo,
+.datos-izquierda app-contra,
+.datos-izquierda app-texto,
+.datos-derecha app-visualizador {
+  background-color: rgba(0, 0, 0, 0.6);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(5px); /* Efecto de desenfoque */
+}
+
+ 

@@ -1,0 +1,154 @@
+/* Estilo base para los botones y los campos de formulario */
+/* button, .animar-elemento, .input-container input {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-family: 'Star Jedi', sans-serif;
+    color: #f7f7f7;
+    background-color: #212121;
+    border: 3px solid #f7f7f7;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+    height: 120px;
+  } */
+  
+  /* Efecto de brillo en el texto cuando se hace clic en botones y campos de entrada */
+  /* button:active span, .input-container input:active, .animar-elemento:active span {
+    color: #f39c12;
+    text-shadow: 0 0 10px rgba(255, 150, 0, 0.8); /* Resplandor del texto */
+   
+  
+  /* Estilo de fondo y borde cuando se hace clic (sin compresión ni rotación) */
+  /* button:active, .input-container input:active, .animar-elemento:active {
+    background-color: #333;
+    border-color: #f39c12;
+    box-shadow: 0 10px 20px rgba(255, 150, 0, 0.5); 
+    cursor: pointer;
+  } */
+  
+  /* Estilo para el texto dentro de los botones o campos */
+  /* button span, .animar-elemento span, .input-container input {
+    z-index: 1;
+    position: relative;
+  } */
+  
+  /* Efecto de expansión al pasar el ratón */
+  /* button:hover, .input-container input:hover, .animar-elemento:hover {
+    background-color: #333;
+    border-color: #f39c12;
+    box-shadow: 0 10px 20px rgba(255, 150, 0, 0.5);
+    cursor: pointer;
+  } */
+  
+ /* Estilo base del botón */
+button {
+  padding: 15px 30px;
+  font-size: 18px;
+  font-family: 'Star Jedi', sans-serif; /* Fuente temática Star Wars */
+  color: #f7f7f7;
+  background-color: #212121; /* Fondo oscuro */
+  border: 3px solid #f7f7f7; /* Borde brillante */
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+  transition: all 0.3s ease;
+}
+
+/* Expansión al pasar el ratón */
+button:hover {
+  background-color: #333; /* Fondo más claro */
+  border-color: #f39c12; /* Borde naranja */
+  box-shadow: 0 10px 20px rgba(255, 150, 0, 0.5); /* Sombra brillante */
+  cursor: pointer;
+}
+
+/* Efecto de "clic" al presionar */
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 5px rgba(255, 150, 0, 0.8); /* Sombra fuerte */
+  background-color: #444;
+}
+
+/* Texto en el centro del botón */
+button span {
+  z-index: 1;
+  position: relative;
+}
+
+button {
+  transition: transform 0.5s ease-in-out;
+}
+
+button.animate {
+  /* El botón se moverá 200px hacia la derecha */
+   transform: translateX(200px);   
+}
+ 
+
+
+  /* Estilo específico para el input dentro del formulario */
+  /* .resultado {
+    margin-bottom: 20px;
+    width: 250px;
+    height: 360px;
+  } */
+  
+  /* .resultado input {
+    width: 100%;
+    padding: 12px 20px; 
+    font-size: 18px;
+    border-radius: 5px;
+    border: 3px solid #f7f7f7;
+    background-color: #212121;
+    color: #f7f7f7;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  } */
+  
+  /* Resplandor al enfocarse */
+  /* .resultado input:focus {
+    outline: none;
+    border-color: #f39c12;
+    box-shadow: 0 0 5px rgba(255, 150, 0, 0.8); 
+  } */
+  
+  
+  
+
+  .error-message {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .success-message {
+    color: green;
+    font-size: 12px;
+  }
+
+
+/* 2 */
+/* .visualizador {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.cuadrado {
+  width: 100px;
+  height: 100px;
+  background-color: #4CAF50;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cuadrado.clicked {
+  transform: rotate(45deg);
+} */

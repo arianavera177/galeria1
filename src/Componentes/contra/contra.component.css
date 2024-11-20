@@ -1,0 +1,81 @@
+/* Estilo base para los botones y los campos de formulario */
+button, .animar-elemento, .input-container input {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-family: 'Star Jedi', sans-serif;
+    color: #f7f7f7;
+    background-color: #212121;
+    border: 3px solid #f7f7f7;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+    transition: all 0.3s ease;
+  }
+  
+  /* Efecto de brillo en el texto cuando se hace clic en botones y campos de entrada */
+  button:active span, .input-container input:active, .animar-elemento:active span {
+    color: #f39c12;
+    text-shadow: 0 0 10px rgba(255, 150, 0, 0.8); /* Resplandor del texto */
+  }
+  
+  /* Estilo de fondo y borde cuando se hace clic (sin compresión ni rotación) */
+  button:active, .input-container input:active, .animar-elemento:active {
+    background-color: #333;
+    border-color: #f39c12;
+    box-shadow: 0 10px 20px rgba(255, 150, 0, 0.5); /* Sombra intensa */
+    cursor: pointer;
+  }
+  
+  /* Estilo para el texto dentro de los botones o campos */
+  button span, .animar-elemento span, .input-container input {
+    z-index: 1;
+    position: relative;
+  }
+  
+  /* Efecto de expansión al pasar el ratón */
+  button:hover, .input-container input:hover, .animar-elemento:hover {
+    background-color: #333;
+    border-color: #f39c12;
+    box-shadow: 0 10px 20px rgba(255, 150, 0, 0.5);
+    cursor: pointer;
+  }
+  
+  /* Estilo específico para el input dentro del formulario */
+  .input-container {
+    margin-bottom: 20px;
+  }
+  
+  .input-container input {
+    width: 100%;
+    padding: 12px 20px; /* Ajuste del padding */
+    font-size: 18px;
+    border-radius: 5px;
+    border: 3px solid #f7f7f7;
+    background-color: #212121;
+    color: #f7f7f7;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+  }
+  
+  .input-container input:focus {
+    outline: none;
+    border-color: #f39c12;
+    box-shadow: 0 0 5px rgba(255, 150, 0, 0.8); /* Resplandor al enfocarse */
+  }
+  
+  .input-container input:active {
+    background-color: #333;
+    border-color: #f39c12;
+    box-shadow: 0 10px 20px rgba(255, 150, 0, 0.5); /* Sombra intensa */
+    cursor: pointer;
+  }
+  .error-message {
+    color: red;
+    font-size: 12px;
+  }
+  
+  .success-message {
+    color: green;
+    font-size: 12px;
+  }
