@@ -37,19 +37,18 @@ export class CorreoComponent {
 
   // email=false;
   correo: string = '';  // Variable para almacenar el correo ingresado
-  correoValido: boolean = true;  // Flag para verificar si el correo es válido
-
-  // Este evento emite el correo ingresado hacia el componente visualizador
+  correoValido: boolean = true;  // Se una una variable booleana, dando valores como verdadero o falso ayudando con la verificación del correo.
+  // Este evento emite el correo ingresado hacia el componente visualizador.
+  //Del componente hijo al padre, un evento tipo string (texto).
   @Output() correoEmitido = new EventEmitter<string>();
-
-  // Función para verificar si el correo es válido
+  // Método para verificar si el correo es válido
+  
   verificarCorreo() {
-    if (this.correo === 'arianav981@gmail.com') {
+    if (this.correo === 'arianav981@gmail.com') {//Si el correo es igual a arianav981@gmail.com se manda un mensaje de correo correcto sino de incorrecto.
       this.correoValido = true;  // Si es el correo correcto
     } else {
       this.correoValido = false;  // Si el correo es incorrecto
     }
-
     // Emitir el correo al componente visualizador
     this.correoEmitido.emit(this.correo);
   }

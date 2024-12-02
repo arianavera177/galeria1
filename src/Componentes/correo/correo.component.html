@@ -14,11 +14,12 @@
           <h3 class="form-title">Inicia sesión</h3>
           <div class="input-container">
             <!-- Campo de entrada del correo -->
+            <!-- En en input espacio donde se coloca el correo, usamos NgModel o enlace bidereccional, permite la actualización de datos, de una manera rápida -->
             <input 
-              type="email"  placeholder="Correo" [(ngModel)]="correo"  (input)="verificarCorreo()"  
-            >
+              type="email"  placeholder="Correo" [(ngModel)]="correo"  (input)="verificarCorreo()"  >
           
             <!-- Mensaje de validación -->
+            <!-- Usamos ngIf, nos ayudaría para mostrar el mensaje si se cumple las condiciones establecidas, si el correo es igual al correo ingresado, se manda un mensaje "correo correcto " o sino cumple "correo incorrecto" -->
             <span *ngIf="correo && !correoValido" class="error-message">Correo incorrecto</span>
             <span *ngIf="correo && correoValido" class="success-message">Correo correcto</span>
           </div>

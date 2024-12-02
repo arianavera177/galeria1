@@ -27,13 +27,14 @@ export class TextoComponent {
   textoValido: boolean = true;  // Validación del texto (si es válido o no)
 
   // Expresión regular para validar el texto
-  textoValidoRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
-
+  textoValidor = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
+//De hijo a padre emite un evento texto.
   @Output() textoEmitido = new EventEmitter<string>();  // Emitir el texto al componente principal
-
+//Método de verificación del texto
+  // Función para verificar si el texto es válido
   verificarTexto() {
     // Validar el texto utilizando la expresión regular
-    this.textoValido = this.textoValidoRegex.test(this.texto);
+    this.textoValido = this.textoValidor.test(this.texto);
 
     // Emitir el texto si es válido, si no es válido no se emite nada
     if (this.textoValido) {

@@ -2,15 +2,21 @@
   <h3>Texto ingresado</h3>
  
   <p> Correo ingresado:   </p>
-  <p>{{ correo }} </p>
+  <!-- Uso de interpolacion -->
+  <p>{{ correo}} </p>
 
   <p>Contraseña:</p>
+  <!-- Uso de interpolación -->
   <p>{{contrasena}}</p>
 
   <p>Texto:</p>
   <p> {{ texto }}</p> 
-    <button [class.animate]="animateButton"  > Cuadrado</button>
- 
+  <!-- Aqui por medio de clases se realiza la acción , estas clases van hacer afectadas en css -->
+  <!-- <button [class.animate]="animateButton" > Cuadrado</button> -->
+  <button   [class.aceptar]="animateButton === 'aceptar'"
+  [class.cancelar]="animateButton === 'cancelar'"
+  [class.primario]="animateButton === 'primario'"
+  [class.secundario]="animateButton === 'secundario'">Cuadrado  </button>
 
   </div> 
 

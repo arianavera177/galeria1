@@ -1,32 +1,32 @@
-import { Component, Input,OnChanges, SimpleChanges } from '@angular/core';
-import { NgClass } from '@angular/common';
+import { Component, Output,EventEmitter} from '@angular/core';
 @Component({
   selector: 'app-btn-primario',
   standalone: true,
-  imports: [NgClass],
+  imports: [],
   templateUrl: './btn-primario.component.html',
   styleUrl: './btn-primario.component.css'
 })
 export class BtnPrimarioComponent {
-  @Input() activarAnimacion: boolean = false;  // Recibe la señal para activar la animación
+//   @Output() primar = new EventEmitter<void>();//va de hijo (este boton) al padre (app.component)
+// //metodo para el funcionamiento del boton al hacer click
+//   prima() {
+//     // Emitir un evento para notificar al componente padre
+//     this.primar.emit();
+//   }
 
-  // Detecta cambios en la propiedad activarAnimacion
-  ngOnChanges(changes: SimpleChanges) {
-    if (changes['activarAnimacion'] && this.activarAnimacion) {
-      this.iniciarAnimacion();
-    }
+//De hijo a padre, emite un evento string, considera el id de los botones para emitir su evento respectivo.
+@Output() buttonClicked = new EventEmitter<string>();//de hijo a padre emite un evento
+
+// Emitir el tipo de animación cuando el botón es presionado
+//Cuando el usuario hace clic en el botón, el método onClick() emite el evento, indicando que se debe aplicar la animación de pedida.
+onClick() {
+  this.buttonClicked.emit('primario');
+}
+ 
+
+
   }
 
-  // Método para iniciar la animación de rodar
-  iniciarAnimacion() {
-    const boton = document.getElementById('botonAnimado');
-    if (boton) {
-      boton.classList.add('rodar');  // Se añade la clase de animación
-      setTimeout(() => {
-        boton.classList.remove('rodar');  // Se elimina la clase después de la animación
-      }, 1000);  // Duración de la animación (1 segundo)
-    }
-  }
 
 
 
@@ -41,8 +41,7 @@ export class BtnPrimarioComponent {
 
 
 
-
-
+//Animacion en el mismo boton
   // @Output() prime= new EventEmitter<boolean>();
 // inicio = false; // Controla el estado de la animación
 // primario(){
@@ -53,16 +52,5 @@ export class BtnPrimarioComponent {
 //   }, 2000);
 // }
   
-}
 
-// @Output() aceptarClick = new EventEmitter<boolean>();
-//   enProceso = false; // Controla el estado de la animación
-//    aceptar(){
-//     this.enProceso = true; // Inicia la animación
-//     setTimeout(() => {//Ejecuta el codigo despues de 2 segundos
-//       this.enProceso = false; // Finaliza la animación después de 2 segundos
-//       this.aceptarClick.emit(true);
-//     }, 2000);
-    
-//    }
 

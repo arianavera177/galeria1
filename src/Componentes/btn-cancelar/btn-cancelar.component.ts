@@ -12,7 +12,15 @@ export class BtnCancelarComponent {
 // Cancelar(){
 //   this.parar.emit(true);
 // }
+//Para el boton cancealar
 
+//De hijo a padre, emite un evento string, considera el id de los botones para emitir su evento respectivo.
+@Output() buttonClicked = new EventEmitter<string>();
+// Emitir el tipo de animación cuando el botón es presionado
+//Cuando el usuario hace clic en el botón, el método onClick() emite el evento, indicando que se debe aplicar la animación de pedida.
+  onClick() {
+    this.buttonClicked.emit('cancelar');
+  }
 
 
 

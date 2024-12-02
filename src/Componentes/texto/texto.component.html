@@ -8,10 +8,10 @@
 
   <div class="input-container">
     <input 
-      type="text"  placeholder="Texto"  [(ngModel)]="texto"   (input)="verificarTexto()"  
-    >
+      type="text"  placeholder="Texto"  [(ngModel)]="texto"   (input)="verificarTexto()"  >
   
     <!-- Mensaje de validación -->
+    <!-- Se establece la condición si el texto es igual a un texto valido, nose considera los caracteres, ni signos de puntuación solos, dependiendo de esto muestra un mensaje de error o el mensaje de correcto o verificado -->
     <span *ngIf="texto && !textoValido" class="error-message">El texto no puede estar vacío</span>
     <span *ngIf="texto && textoValido" class="success-message">Texto válido</span>
   </div>

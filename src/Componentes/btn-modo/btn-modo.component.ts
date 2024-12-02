@@ -8,17 +8,17 @@ import { Component, Output,EventEmitter } from '@angular/core';
  styleUrl: './btn-modo.component.css'
  })
 export class BtnModoComponent {
+  //Hijo a padre, emite el evento booleano.
 @Output() modoclick =new EventEmitter<boolean>();
-modoc=false;//empieza por falso
+modoc=false;//empieza por falso (modo claro)
+//Método que invierte el valor de la variable, cambiandola al modo oscuro
 modo(){//creacion del método
   this.modoc = !this.modoc;
-  this.modoclick.emit(this.modoc);
-  
+  this.modoclick.emit(this.modoc);//emite el valor ya cambiado
  }
-
- cambiarModo(event: any) {
-  this.modoc = event.target.checked;
-  this.modoclick.emit(this.modoc);  // Emitir el evento al padre con el nuevo estado
+ cambiarModo(event: any) {//permite cambiar el modo.
+  this.modoc = event.target.checked;//se podría considerar como un checkbox, por que al hacer click en el debe de cambiar el modo de claro a obscuro y viceversa.
+  this.modoclick.emit(this.modoc);  // Emitir el evento al padre con el nuevo estado, actualización de datos.
 }
 }
 

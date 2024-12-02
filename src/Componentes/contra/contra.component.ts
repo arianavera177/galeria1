@@ -9,18 +9,18 @@ import { NgIf } from '@angular/common';
   styleUrl: './contra.component.css'
 })
 export class ContraComponent {
-
+  //Nuevas variables donde se almacena la contraseña y la misma validada.
   contrasena: string = '';  // Variable para almacenar la contraseña ingresada
-  contrasenaValida: boolean = true;  // Flag para verificar si la contraseña es válida
-
+  contrasenaValida: boolean = true;  //Variable que almacena la contraseña ya verificada.
+  //De hijo a padre, se establece comunicación,con ella la creación de un evento tipo texto.
   @Output() contrasenaEmitida = new EventEmitter<string>();  // Emitir la contraseña hacia el componente visualizador
 
-  // Función para verificar si la contraseña es válida
+  // Método para verificar si la contraseña es válida
   verificarContrasena() {
-    if (this.contrasena === '12345') {
-      this.contrasenaValida = true;  // Si la contraseña es correcta
+    if (this.contrasena === '12345') {//Si la contraseña es 12345, se manda un mensaje de contraseña correcta.
+      this.contrasenaValida = true;  // Si la contraseña es correcta, se emite.
     } else {
-      this.contrasenaValida = false;  // Si la contraseña es incorrecta
+      this.contrasenaValida = false;  // Si la contraseña es incorrecta no se emite
     }
 
     // Emitir la contraseña hacia el componente visualizador

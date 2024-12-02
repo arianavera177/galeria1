@@ -13,9 +13,6 @@ import { VisualizadorComponent } from '../Componentes/visualizador/visualizador.
 import { NgClass } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 
-
-
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -25,17 +22,8 @@ import { FormsModule } from '@angular/forms';
 })
 export class AppComponent {
   mensaje: string = ''; // Variable para mostrar un mensaje
-
-  aceptarClick(){
-
-  }
-  parar(){
-
-  }
-  
   //Actual
    isDarkMode: boolean = false;  // Estado del modo (oscuro o claro)
-
    toggleDarkMode(isDark: boolean) {
      this.isDarkMode = isDark;  // Cambiar el estado según el evento recibido
    }
@@ -43,42 +31,47 @@ export class AppComponent {
    contrasena: string = '';  // Variable para almacenar la contraseña ingresada
    texto: string = '';  // Variable para almacenar el texto ingresado
    
-   animateVisualizador = false;
-
-   onButtonClicked() {
-     this.animateVisualizador = true;
+  // //Animación del boton aceptar
+  //  animateVisualizador = false;
+  //   onButtonClicked() {
+  //    this.animateVisualizador = true;
  
-     // Después de un tiempo, desactivar la animación (1 segundo en este caso)
-     setTimeout(() => {
-       this.animateVisualizador = false;
-     }, 1000);
-   }
+  //    // Después de un tiempo, desactivar la animación (1 segundo en este caso)
+  //   setTimeout(() => {
+  //      this.animateVisualizador = false;
+  //    }, 1000);
+  //  }
+// Variable para almacenar el tipo de animación para el visualizador, empieza con ningún valor, por eso esta sin nada en las comillas.
+animateVisualizador: string = '';
 
-  
+// Método para cambiar la animación basada en el botón presionado
+onButtonClicked(tipo: string) {//Se define como tipo string debido a que usan el mismo metodo pero cambia su nombre, primario, secundario, aceptar.
+  this.animateVisualizador = tipo;//asigna el nombre de la animación, a la variable animateVisualizador
+
+  // Temporizador: Después de 1 segundo, quitar la animación (para permitir que se repita)
+  setTimeout(() => {//Función que establece la ejecución de la animación durante 1 segundo, luego de este tiempo, desaparece.
+    this.animateVisualizador = '';
+  }, 1000);
+}
+
+  }
+   
+
+
+ //  animateVisualizador = false;
+  //  onButtonClicked() {
+  //    this.animateVisualizador = true;
+ 
+  //    // Después de un tiempo, desactivar la animación (1 segundo en este caso)
+  //    setTimeout(() => {
+  //      this.animateVisualizador = false;
+  //    }, 1000);
+  //  }
 
 
 
 
 
-
-
-
-
-
-
-
-
-  //  // Método para manejar el evento de clic en el botón de Aceptar
-  // onButtonClicked() {
-  //   // Aquí llamamos al método del visualizador para activar la animación
-  //   this.triggerAnimation();
-  // }
-
-  // // Puedes definir el método aquí o pasarlo directamente como Output al visualizador
-  // triggerAnimation() {
-  //   // Llamada para activar la animación
-  //   console.log('Activando animación');
-  // }
 
 
 
@@ -98,25 +91,7 @@ export class AppComponent {
 
 
 
-   //fin
-  //  usuario: string = '';
-  //  contrasena: string = '';
-  //  texto: string = '';
  
-  //  // Método para recibir el correo
-  //  recibirCorreo(correo: string) {
-  //    this.usuario = correo;
-  //  }
- 
-  //  // Método para recibir la contraseña
-  //  recibirContrasena(contrasena: string) {
-  //    this.contrasena = contrasena;
-  //  }
- 
-  //  // Método para recibir el texto
-  //  recibirTexto(texto: string) {
-  //    this.texto = texto;
-  //  }
    
  
 
@@ -159,5 +134,4 @@ export class AppComponent {
   //   console.log('Modo oscuro activado:', this.isDarkMode);
   // }
 
-  }
 

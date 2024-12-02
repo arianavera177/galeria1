@@ -12,13 +12,13 @@
           <input type="password" class="input" placeholder="Contraseña"  >
         </div> -->
 
-
         <div class="input-container">
           <!-- Se realiza una vinculación bidireccional con ngModel -->
           <!-- Se implementa un método que ayuda a verificar la contraseña-->
+          <!-- En el input tipo contraseña, usamos NgModel, con el fin de que este datos, se actualiza de manera rápida. -->
           <input type="password"  placeholder="Contraseña" [(ngModel)]="contrasena"  (input)="verificarContrasena()"  >
-         
           <!-- Mensaje de validación -->
+          <!-- Usamos ngIf, nos ayudaría para mostrar el mensaje si se cumple las condiciones establecidas, si la contraseña es igual a la cotraseña ingresado, se manda un mensaje "contraseña correcta " o sino cumple "cotraseña incorrecta" -->
           <span *ngIf="contrasena && !contrasenaValida" class="error-message">Contraseña incorrecta</span>
           <span *ngIf="contrasena && contrasenaValida" class="success-message">Contraseña correcta</span>
         </div>

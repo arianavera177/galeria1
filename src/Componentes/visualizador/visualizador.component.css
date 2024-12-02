@@ -43,7 +43,7 @@
   } */
   
  /* Estilo base del botón */
-button {
+ button {
   padding: 15px 30px;
   font-size: 18px;
   font-family: 'Star Jedi', sans-serif; /* Fuente temática Star Wars */
@@ -73,20 +73,63 @@ button:active {
 }
 
 /* Texto en el centro del botón */
-button span {
+/* button span {
   z-index: 1;
   position: relative;
-}
+} */
 
-button {
+/* button {
   transition: transform 0.5s ease-in-out;
+} */
+/* El botón se moverá 200px hacia la derecha */
+/* button.animate {
+  
+   transform: translateX(200px);   
+}  */
+ 
+
+/* Animación específica para "aceptar" */
+button.aceptar {
+  transform: rotate(45deg);
+
 }
 
-button.animate {
-  /* El botón se moverá 200px hacia la derecha */
-   transform: translateX(200px);   
+/* Animación específica para "cancelar" */
+button.cancelar {
+  transform: scale(0.5);
+  
 }
+
+/* Animación específica para "primario" */
+button.primario {
+  transform:skew(20deg,5deg);
  
+}
+
+/* Animación específica para "secundario" */
+button.secundario {
+  transform:matrix(0.7,-0.5,0.5,0.4,0.5,0.7);
+ 
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   /* Estilo específico para el input dentro del formulario */

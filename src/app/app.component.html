@@ -26,14 +26,33 @@
 </div> -->
 <div class="container" [ngClass]="{ 'dark-mode': isDarkMode }">
   <h1>SUMATIVA</h1>
-  <h1>{{ isDarkMode ? 'Modo Oscuro Activado' : 'Modo Claro Activado' }}</h1>
+  <!--  Se establece una condición, esta es una variable booleana, si es true o al hacer click en el boton modo, se cambia el modo oscuro sino queda como claro. -->
+  <h1>{{ isDarkMode ? 'Modo Oscuro' : 'Modo Claro' }}</h1>
 
   <div class="boton">
-    <app-btn-aceptar (buttonClicked)="onButtonClicked()" ></app-btn-aceptar>
-    <app-btn-cancelar  ></app-btn-cancelar>
+    <!-- En los botones principales tienen un mismo método cuando se hace click en ellos, se realiza una acción, estos se diferencia con su nombre o argumento, indicando que ese boton fue el que realizo la acción y así este da la animación. -->
+    <app-btn-aceptar (buttonClicked)="onButtonClicked('aceptar')"></app-btn-aceptar>
+    <app-btn-cancelar (buttonClicked)="onButtonClicked('cancelar')"></app-btn-cancelar>
+    <app-btn-primario (buttonClicked)="onButtonClicked('primario')"></app-btn-primario>
+    <app-btn-secundario (buttonClicked)="onButtonClicked('secundario')"></app-btn-secundario>
+    <!-- Modo: Así mismo, por medio de un evento indica que cuando hagamos click en el, dependiendo de eso nos muestra el menu claro y oscuro. -->
+    <app-btn-modo (modoclick)="toggleDarkMode($event)"></app-btn-modo>
+
+
+
+
+
+    <!-- <app-btn-aceptar (buttonClicked)="onButtonClicked()" ></app-btn-aceptar>
+   <app-btn-cancelar ></app-btn-cancelar>
     <app-btn-primario ></app-btn-primario>
     <app-btn-secundario></app-btn-secundario>
-    <app-btn-modo (modoclick)="toggleDarkMode($event)"></app-btn-modo>
+    <app-btn-modo (modoclick)="toggleDarkMode($event)"></app-btn-modo>  -->
+
+
+    <!-- <app-btn-aceptar (buttonClicked)="onButtonClicked()" ></app-btn-aceptar> -->
+    <!-- <app-btn-primario ></app-btn-primario>
+    <app-btn-secundario></app-btn-secundario>
+    <app-btn-modo (modoclick)="toggleDarkMode($event)"></app-btn-modo> --> 
   </div>
 
   <!-- Contenedor de datos -->
@@ -42,15 +61,18 @@
     <div class="datos-izquierda">
       <!-- <app-correo (usuario)="recibirUsuario($event)"></app-correo>
       <app-contra (contrasena)="recibirContrasena($event)"></app-contra> -->
-      <app-correo  (correoEmitido)="correo = $event"></app-correo>
+     
+      <!-- Recibe el valor dado por el componente hijo, $event es el valor que se recibe o emite, al igual que la contraseña y el texto -->
+      <app-correo  (correoEmitido)="correo = $event"></app-correo>   
       <app-contra (contrasenaEmitida)="contrasena = $event"></app-contra>
-      
     <app-texto (textoEmitido)="texto = $event"></app-texto>
     </div>
 
     <!-- Componente Visualizador a la derecha -->
     <div class="datos-derecha">
-      <app-visualizador [correo]="correo" [texto]="texto" [contrasena]="contrasena" [animateButton]="animateVisualizador"   ></app-visualizador>
+      <!-- <app-visualizador [correo]="correo" [texto]="texto" [contrasena]="contrasena" [animateButton]="animateVisualizador"  ></app-visualizador> -->
+     <!-- Componente que recibe la información de los colocada en los inputs y además de eso la animación que afectara al boton colocado en ese componente -->
+      <app-visualizador [correo]="correo" [texto]="texto" [contrasena]="contrasena" [animateButton]="animateVisualizador"></app-visualizador>
     </div>
   </div>
 </div>
